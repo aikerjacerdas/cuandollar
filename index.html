@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_tab" name="shell-type"/>
+<title>Beranda - CuanDollar</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-dim": "#cfdaf2",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed-variant": "#0f5132",
+            "surface-container-high": "#dee8ff",
+            "outline-variant": "#c0c9c0",
+            "tertiary-container": "#005136",
+            "on-primary": "#ffffff",
+            "surface-container-low": "#f0f3ff",
+            "on-surface-variant": "#475569",
+            "on-background": "#0F172A",
+            "secondary": "#525f75",
+            "on-tertiary-container": "#35cc92",
+            "on-primary-container": "#84c39b",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#3a475c",
+            "tertiary": "#003824",
+            "on-surface": "#0F172A",
+            "primary-fixed": "#ECFDF5",
+            "on-secondary": "#ffffff",
+            "surface-container-highest": "#e2e8f0",
+            "surface-container": "#f1f5f9",
+            "error": "#ba1a1a",
+            "inverse-on-surface": "#ecf1ff",
+            "on-tertiary-fixed-variant": "#005236",
+            "on-secondary-container": "#58657b",
+            "primary": "#0F5132",
+            "on-secondary-fixed": "#0e1c2f",
+            "secondary-fixed": "#d6e3fe",
+            "primary-container": "#0F5132",
+            "tertiary-fixed-dim": "#16A34A",
+            "secondary-fixed-dim": "#bac7e1",
+            "primary-fixed-dim": "#95d4ac",
+            "on-primary-fixed": "#002111",
+            "surface-tint": "#0F5132",
+            "error-container": "#ffdad6",
+            "surface-variant": "#f1f5f9",
+            "on-tertiary-fixed": "#002113",
+            "surface": "#f8fafc",
+            "secondary-container": "#e0f2fe",
+            "tertiary-fixed": "#ECFDF5",
+            "on-error": "#ffffff",
+            "inverse-surface": "#0F172A",
+            "surface-bright": "#ffffff",
+            "background": "#f8fafc",
+            "outline": "#94a3b8",
+            "inverse-primary": "#95d4ac",
+            "on-tertiary": "#ffffff",
+            "brand-navy": "#0F172A",
+            "brand-green": "#0F5132",
+            "brand-emerald": "#16A34A",
+            "brand-gold": "#F59E0B",
+            "brand-mint": "#ECFDF5"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "2xl": "1rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-md": "1rem",
+            "margin-desktop": "3rem",
+            "gutter": "1rem",
+            "margin": "1rem",
+            "space-xl": "2.25rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "gutter-desktop": "1.5rem",
+            "margin-tablet": "2rem"
+          },
+          fontFamily: {
+            "body-md": ["Plus Jakarta Sans", "Poppins", "sans-serif"],
+            "headline-lg-mobile": ["Plus Jakarta Sans", "Poppins", "sans-serif"],
+            "display-hero": ["Plus Jakarta Sans", "Poppins", "sans-serif"],
+            "display-hero-mobile": ["Plus Jakarta Sans", "Poppins", "sans-serif"],
+            "label-lg": ["Plus Jakarta Sans", "Poppins", "sans-serif"],
+            "body-lg": ["Plus Jakarta Sans", "Poppins", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "Poppins", "sans-serif"],
+            "headline-lg": ["Plus Jakarta Sans", "Poppins", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "Poppins", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "Poppins", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "Poppins", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "Poppins", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        background-color: #f8fafc;
+      }
+      body {
+        overscroll-behavior-y: none;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        color: #0F172A;
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-brand-navy flex flex-col min-h-screen selection:bg-brand-mint selection:text-brand-green">
+<!-- 1. HEADER -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-slate-100 pt-safe shadow-[0_1px_8px_rgba(15,23,42,0.03)]">
+<div class="h-16 px-gutter flex items-center justify-between gap-space-sm">
+<a aria-label="Beranda CuanDollar" class="flex items-center min-w-0 flex-shrink-0" href="#">
+<img alt="Logo CuanDollar" class="h-9 w-auto max-w-[170px] object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VjTW88Pu6xVLukpiUsDp4_3eabuxCy7OYu6XXWKLtThQG4OMh4827q7Alf8yB8pfY5Ju_V-csR5p4-2VeR-m-bIapIRx8HDo99fempyLLiH3nWcQkOfTfRtsPWhGEm6mk1m72L5tbw8d__xQ-gdYs6PVOA6G7cXJBAbbdF7Hpj86tKt-KdD9CKYp3z0TZmykzpbI1JTLKQAxxznwcXXs0MyrsS3w9Cyy_S5kWP9S87dg5vOUbHYxQ-8f8"/>
+</a>
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<a class="inline-flex items-center justify-center min-h-[40px] px-space-md bg-[#0F5132] text-white text-label-sm font-semibold rounded-full shadow-sm hover:bg-[#0b3d26] active:scale-95 transition-all" data-path="checkout" href="#harga">
+          Beli Akses
+        </a>
+<button aria-label="Menu Navigasi" class="w-10 h-10 flex items-center justify-center rounded-full text-slate-700 hover:bg-slate-100 active:bg-slate-200 transition-colors" type="button">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT -->
+<main class="flex-1 flex flex-col relative w-full pt-20 pb-28 bg-[#f8fafc] px-gutter">
+<div class="flex flex-col w-full space-y-space-xl">
+<!-- 2. HERO SECTION -->
+<section class="flex flex-col items-center text-center space-y-space-md pt-space-xs">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/60 shadow-xs text-xs font-semibold">
+<span class="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse"></span>
+<span>Panduan &amp; Kurasi Kerja Remote Terarah</span>
+</div>
+<!-- Tagline Resmi Persis -->
+<h1 class="text-3xl font-extrabold text-[#0F172A] tracking-tight leading-tight">
+          Mulai hari ini, dapatkan <span class="text-[#0F5132] underline decoration-[#16A34A] decoration-wavy decoration-2">cuan dollar!</span>
+</h1>
+<!-- Deskripsi Resmi Persis -->
+<p class="text-sm font-normal text-slate-600 max-w-md leading-relaxed">
+          Temukan peluang kerja remote dan freelance internasional, siapkan dokumen lamaran, hitung tarif jasa, dan kelola progres lamaran dalam satu tempat.
+        </p>
+<!-- CTA Buttons -->
+<div class="flex flex-col w-full gap-2.5 pt-1 sm:flex-row sm:justify-center">
+<a class="flex items-center justify-center gap-2 w-full sm:w-auto min-h-[48px] px-6 bg-[#0F5132] text-white text-sm font-bold rounded-full shadow-[0_4px_14px_rgba(15,81,50,0.25)] hover:bg-[#0b3d26] active:scale-[0.98] transition-all" data-path="checkout" href="#harga">
+<span>Beli Akses — Rp99.000</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="flex items-center justify-center gap-2 w-full sm:w-auto min-h-[48px] px-6 bg-white text-[#0F5132] border border-slate-300 text-sm font-semibold rounded-full shadow-xs hover:bg-slate-50 active:scale-[0.98] transition-all" href="#fitur">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>Coba Demo</span>
+</a>
+</div>
+<!-- Ilustrasi Pratinjau Peluang Kerja Berlabel 'Contoh Demo' -->
+<div class="w-full relative mt-3 rounded-2xl bg-white border border-slate-200/90 p-4 shadow-sm text-left">
+<div class="flex items-center justify-between pb-3 border-b border-slate-100">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+<span class="text-xs font-bold text-slate-700 tracking-wide">Direktori Peluang</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200/80 text-[11px] font-bold">
+              Contoh Demo
+            </span>
+</div>
+<div class="space-y-2.5 pt-3">
+<!-- Opportunity Card 1 -->
+<div class="bg-slate-50/80 rounded-xl p-3 border border-slate-100 flex items-start justify-between gap-2">
+<div class="space-y-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-[#0F172A] truncate">Virtual Assistant</span>
+<span class="px-1.5 py-0.5 text-[10px] font-medium bg-emerald-100/70 text-emerald-800 rounded">Remote Global</span>
+</div>
+<p class="text-[11px] text-slate-500">Kategori: Administrasi • Fleksibel</p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="text-xs font-bold text-[#0F5132] block">$15 - $20 / jam</span>
+<span class="text-[10px] text-slate-400">Terbuka Pemula</span>
+</div>
+</div>
+<!-- Opportunity Card 2 -->
+<div class="bg-slate-50/80 rounded-xl p-3 border border-slate-100 flex items-start justify-between gap-2">
+<div class="space-y-1 min-w-0">
+<div class="flex items-center gap-2">
+<span class="text-xs font-bold text-[#0F172A] truncate">Content Writer &amp; Researcher</span>
+<span class="px-1.5 py-0.5 text-[10px] font-medium bg-blue-100/70 text-blue-800 rounded">Freelance</span>
+</div>
+<p class="text-[11px] text-slate-500">Kategori: Penulisan • Proyek Fleksibel</p>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="text-xs font-bold text-[#0F5132] block">$18 - $20 / jam</span>
+<span class="text-[10px] text-slate-400">Kurasi Terverifikasi</span>
+</div>
+</div>
+</div>
+<p class="text-[11px] text-slate-400 text-center pt-2">Data di atas merupakan contoh ilustrasi demo platform.</p>
+</div>
+</section>
+<!-- 3. BAGIAN MANFAAT 'MULAI LEBIH TERARAH' -->
+<section class="flex flex-col space-y-3">
+<div class="space-y-1">
+<span class="text-[11px] font-bold uppercase tracking-wider text-[#0F5132]">Kenapa CuanDollar?</span>
+<h2 class="text-xl font-bold text-[#0F172A]">Mulai Lebih Terarah</h2>
+<p class="text-xs text-slate-500">Fokus pada persiapan terstruktur dan realistis tanpa janji palsu.</p>
+</div>
+<div class="grid grid-cols-1 gap-2.5">
+<!-- Point 1 -->
+<div class="bg-white rounded-xl p-3.5 border border-slate-200/80 shadow-xs flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-50 text-[#0F5132] flex items-center justify-center flex-shrink-0 font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<div class="space-y-0.5">
+<h3 class="text-sm font-bold text-[#0F172A]">1. Lebih mudah menemukan peluang yang relevan</h3>
+<p class="text-xs text-slate-600">Kurasi lowongan internasional yang terbuka dan ramah untuk talenta dari Indonesia.</p>
+</div>
+</div>
+<!-- Point 2 -->
+<div class="bg-white rounded-xl p-3.5 border border-slate-200/80 shadow-xs flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-50 text-[#0F5132] flex items-center justify-center flex-shrink-0 font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">edit_document</span>
+</div>
+<div class="space-y-0.5">
+<h3 class="text-sm font-bold text-[#0F172A]">2. Lebih siap menyusun lamaran</h3>
+<p class="text-xs text-slate-600">Gunakan standar CV internasional, draf cover letter, dan proposal profesional.</p>
+</div>
+</div>
+<!-- Point 3 -->
+<div class="bg-white rounded-xl p-3.5 border border-slate-200/80 shadow-xs flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-50 text-[#0F5132] flex items-center justify-center flex-shrink-0 font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">price_change</span>
+</div>
+<div class="space-y-0.5">
+<h3 class="text-sm font-bold text-[#0F172A]">3. Lebih terarah menentukan tarif freelance</h3>
+<p class="text-xs text-slate-600">Simulasikan fee platform, biaya penarikan, dan konversi kurs sebelum mengajukan penawaran.</p>
+</div>
+</div>
+<!-- Point 4 -->
+<div class="bg-white rounded-xl p-3.5 border border-slate-200/80 shadow-xs flex items-start gap-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-50 text-[#0F5132] flex items-center justify-center flex-shrink-0 font-bold text-sm">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+</div>
+<div class="space-y-0.5">
+<h3 class="text-sm font-bold text-[#0F172A]">4. Lebih rapi mencatat progres lamaran</h3>
+<p class="text-xs text-slate-600">Pantau tahap pengiriman berkas hingga wawancara dalam satu alur kerja tertib.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. EMPAT FITUR UTAMA (URUTAN & NAMA PERSIS, BERLABEL 'CONTOH DEMO') -->
+<section class="flex flex-col space-y-4" id="fitur">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-[11px] font-bold uppercase tracking-wider text-[#0F5132]">Alat &amp; Fitur</span>
+<span class="px-2 py-0.5 bg-amber-50 text-amber-700 text-[10px] font-bold rounded-full border border-amber-200">Pratinjau Demo</span>
+</div>
+<h2 class="text-xl font-bold text-[#0F172A]">Empat Fitur Utama CuanDollar</h2>
+<p class="text-xs text-slate-500">Dirancang berurutan untuk mendukung siklus pencarian kerja remotemu.</p>
+</div>
+<div class="space-y-3.5">
+<!-- Fitur 1: Cari Kerja -->
+<div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-emerald-50 text-[#0F5132] flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">public</span>
+</div>
+<h3 class="text-base font-bold text-[#0F172A]">1. Cari Kerja</h3>
+</div>
+<span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-[10px] font-semibold">Contoh Demo</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Temukan peluang kerja remote dan freelance internasional yang dikurasi untuk membantu pencarianmu lebih terarah.
+            </p>
+<!-- Kartu Peluang Demo -->
+<div class="bg-slate-50 rounded-xl p-3 border border-slate-200/80 space-y-2">
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="text-xs font-bold text-[#0F172A] block">Customer Support Representative</span>
+<span class="text-[11px] text-slate-500">Kategori: Operasional • Jenis: Remote Kontrak Penuh</span>
+</div>
+<span class="text-xs font-bold text-emerald-700 whitespace-nowrap">$16/jam</span>
+</div>
+<div class="pt-1 flex items-center justify-between">
+<span class="text-[11px] text-slate-400">Sumber: RemoteOK / Partner</span>
+<a class="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0F5132] hover:underline" href="#">
+<span>Lihat Sumber Asli ↗</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Fitur 2: Siapkan Lamaran -->
+<div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-emerald-50 text-[#0F5132] flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">description</span>
+</div>
+<h3 class="text-base font-bold text-[#0F172A]">2. Siapkan Lamaran</h3>
+</div>
+<span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-[10px] font-semibold">Contoh Demo</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Gunakan template CV, cover letter, proposal freelance, dan checklist untuk mempersiapkan lamaran.
+            </p>
+<!-- Contoh Kartu Template Pemula -->
+<div class="grid grid-cols-2 gap-2">
+<div class="bg-slate-50 rounded-xl p-2.5 border border-slate-200/70 space-y-1">
+<span class="material-symbols-outlined text-[18px] text-[#0F5132]">badge</span>
+<div class="text-[11px] font-bold text-[#0F172A]">Resume Format ATS</div>
+<div class="text-[10px] text-slate-500">Google Docs &amp; Word</div>
+</div>
+<div class="bg-slate-50 rounded-xl p-2.5 border border-slate-200/70 space-y-1">
+<span class="material-symbols-outlined text-[18px] text-[#0F5132]">send_to_mobile</span>
+<div class="text-[11px] font-bold text-[#0F172A]">Upwork Proposal Kit</div>
+<div class="text-[10px] text-slate-500">Draf siap sesuaikan</div>
+</div>
+</div>
+</div>
+<!-- Fitur 3: Hitung Cuan (Interactive Calculator) -->
+<div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-emerald-50 text-[#0F5132] flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">calculate</span>
+</div>
+<h3 class="text-base font-bold text-[#0F172A]">3. Hitung Cuan</h3>
+</div>
+<span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-[10px] font-semibold">Contoh Demo</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Perkirakan tarif freelance, pendapatan, biaya, dan hasil bersih berdasarkan asumsi yang kamu masukkan.
+            </p>
+<!-- Kalkulator Tarif Interaktif -->
+<div class="bg-[#0F172A] text-white rounded-xl p-3.5 space-y-3">
+<div class="flex items-center justify-between text-xs text-slate-300">
+<span class="font-medium">Kalkulator Simulasi Tarif</span>
+<span class="text-[11px] text-emerald-400">Kurs: $1 = Rp16.000</span>
+</div>
+<!-- Inputs Grid -->
+<div class="grid grid-cols-2 gap-2 text-left">
+<div>
+<label class="text-[10px] text-slate-300 block mb-1" for="calc-rate">Tarif (USD/jam):</label>
+<input class="w-full bg-slate-800 text-white border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-emerald-400 focus:outline-none" id="calc-rate" min="5" type="number" value="15"/>
+</div>
+<div>
+<label class="text-[10px] text-slate-300 block mb-1" for="calc-hours">Jam Kerja/Bulan:</label>
+<input class="w-full bg-slate-800 text-white border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-emerald-400 focus:outline-none" id="calc-hours" min="1" type="number" value="80"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-left">
+<div>
+<label class="text-[10px] text-slate-300 block mb-1" for="calc-fee">Fee Platform (%):</label>
+<input class="w-full bg-slate-800 text-white border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-emerald-400 focus:outline-none" id="calc-fee" max="50" min="0" type="number" value="10"/>
+</div>
+<div>
+<label class="text-[10px] text-slate-300 block mb-1" for="calc-fx">Kurs IDR (Rp):</label>
+<input class="w-full bg-slate-800 text-white border border-slate-700 rounded-lg px-2.5 py-1.5 text-xs focus:ring-1 focus:ring-emerald-400 focus:outline-none" id="calc-fx" min="1000" step="100" type="number" value="16000"/>
+</div>
+</div>
+<!-- Result Display -->
+<div class="pt-2 border-t border-slate-800 space-y-1">
+<div class="flex justify-between text-[11px] text-slate-400">
+<span>Gross: <strong class="text-slate-200" id="res-gross">$1,200</strong></span>
+<span>Potongan Fee: <strong class="text-rose-400" id="res-fee">-$120</strong></span>
+</div>
+<div class="bg-black/30 p-2.5 rounded-lg flex items-center justify-between">
+<span class="text-xs text-slate-300">Estimasi Bersih:</span>
+<span class="text-sm font-extrabold text-[#ECFDF5] text-emerald-300" id="res-net">Rp 17.280.000</span>
+</div>
+</div>
+</div>
+<p class="text-[10px] text-slate-500 italic bg-slate-50 p-2 rounded-lg border border-slate-200/60">
+              *Disclaimer: Hasil merupakan estimasi perhitungan pengguna, bukan jaminan pendapatan.
+            </p>
+</div>
+<!-- Fitur 4: Lamaran Saya -->
+<div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-emerald-50 text-[#0F5132] flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">view_kanban</span>
+</div>
+<h3 class="text-base font-bold text-[#0F172A]">4. Lamaran Saya</h3>
+</div>
+<span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-[10px] font-semibold">Contoh Demo</span>
+</div>
+<p class="text-xs text-slate-600 leading-relaxed">
+              Simpan peluang yang diminati dan catat progres lamaranmu agar lebih mudah dipantau.
+            </p>
+<!-- 5 Status Resmi -->
+<div class="space-y-1.5 pt-1">
+<span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">5 Status Alur Pelacakan:</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">1. Ingin Dilamar</span>
+<span class="px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-medium">2. Sudah Melamar</span>
+<span class="px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 text-xs font-medium">3. Wawancara</span>
+<span class="px-2.5 py-1 rounded-md bg-emerald-100 text-emerald-800 text-xs font-bold">4. Diterima</span>
+<span class="px-2.5 py-1 rounded-md bg-rose-50 text-rose-700 text-xs font-medium">5. Ditolak</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. BAGIAN CARA KERJA (3 LANGKAH) -->
+<section class="flex flex-col space-y-3">
+<div class="space-y-1">
+<span class="text-[11px] font-bold uppercase tracking-wider text-[#0F5132]">Alur Praktis</span>
+<h2 class="text-xl font-bold text-[#0F172A]">Cara Kerja CuanDollar</h2>
+<p class="text-xs text-slate-500">Tiga tahap sederhana untuk mulai melamar pekerjaan internasional.</p>
+</div>
+<div class="space-y-2.5">
+<!-- Langkah 1 -->
+<div class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-slate-200/90 shadow-xs">
+<div class="w-8 h-8 rounded-full bg-[#0F5132] text-white flex items-center justify-center font-bold text-xs flex-shrink-0">
+              1
+            </div>
+<div class="space-y-0.5">
+<h3 class="text-sm font-bold text-[#0F172A]">Temukan peluang kerja yang sesuai</h3>
+<p class="text-xs text-slate-600">Gunakan filter kategori keahlian, bahasa, dan fleksibilitas waktu di direktori terkurasi.</p>
+</div>
+</div>
+<!-- Langkah 2 -->
+<div class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-slate-200/90 shadow-xs">
+<div class="w-8 h-8 rounded-full bg-[#0F5132] text-white flex items-center justify-center font-bold text-xs flex-shrink-0">
+              2
+            </div>
+<div class="space-y-0.5">
+<h3 class="text-sm font-bold text-[#0F172A]">Siapkan dokumen dan tentukan tarif</h3>
+<p class="text-xs text-slate-600">Sesuaikan draf resume atau cover letter, dan hitung estimasi tarif bersih dengan kalkulator.</p>
+</div>
+</div>
+<!-- Langkah 3 -->
+<div class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-slate-200/90 shadow-xs">
+<div class="w-8 h-8 rounded-full bg-[#0F5132] text-white flex items-center justify-center font-bold text-xs flex-shrink-0">
+              3
+            </div>
+<div class="space-y-0.5">
+<h3 class="text-sm font-bold text-[#0F172A]">Kirim lamaran dan catat progresnya</h3>
+<p class="text-xs text-slate-600">Kirimkan berkas ke platform tujuan, lalu catat status lamaran agar tahapan wawancara terpantau rapi.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. BAGIAN HARGA (SATU PAKET TUNGGAL) -->
+<section class="flex flex-col space-y-3" id="harga">
+<div class="text-center space-y-1">
+<span class="text-[11px] font-bold uppercase tracking-wider text-[#0F5132]">Biaya Akses</span>
+<h2 class="text-xl font-bold text-[#0F172A]">Akses Penuh Tanpa Langganan</h2>
+<p class="text-xs text-slate-500">Investasi terjangkau satu kali bayar untuk seluruh fitur platform.</p>
+</div>
+<!-- Single Card Pricing -->
+<div class="bg-white rounded-2xl p-5 border-2 border-[#0F5132] shadow-[0_8px_24px_rgba(15,81,50,0.08)] space-y-4">
+<div class="border-b border-slate-100 pb-3 text-center space-y-1">
+<span class="px-3 py-1 rounded-full bg-emerald-50 text-[#0F5132] border border-emerald-200 text-xs font-bold inline-block">
+              Akses Premium CuanDollar
+            </span>
+<div class="pt-2">
+<span class="text-3xl font-extrabold text-[#0F5132]">Rp99.000</span>
+</div>
+<p class="text-xs text-slate-500 font-medium">Satu kali bayar, tanpa langganan bulanan.</p>
+</div>
+<!-- 6 Manfaat Resmi -->
+<div class="space-y-2">
+<span class="text-xs font-bold text-[#0F172A] block">Yang Anda dapatkan:</span>
+<ul class="space-y-2 text-xs text-slate-700">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[#16A34A] text-[18px] flex-shrink-0">check_circle</span>
+<span>Akses keempat fitur utama.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[#16A34A] text-[18px] flex-shrink-0">check_circle</span>
+<span>Direktori peluang kerja terkurasi yang tersedia di platform.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[#16A34A] text-[18px] flex-shrink-0">check_circle</span>
+<span>Paket template dokumen lamaran.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[#16A34A] text-[18px] flex-shrink-0">check_circle</span>
+<span>Kalkulator tarif freelance.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[#16A34A] text-[18px] flex-shrink-0">check_circle</span>
+<span>Fitur penyimpanan dan pelacakan lamaran.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[#16A34A] text-[18px] flex-shrink-0">check_circle</span>
+<span>Panduan penggunaan praktis.</span>
+</li>
+</ul>
+</div>
+<a class="flex items-center justify-center min-h-[46px] w-full bg-[#0F5132] text-white text-sm font-bold rounded-full shadow-[0_4px_14px_rgba(15,81,50,0.2)] hover:bg-[#0b3d26] active:scale-[0.98] transition-all" data-path="checkout" href="#">
+            Beli Akses — Rp99.000
+          </a>
+</div>
+</section>
+<!-- 7. FAQ (7 PERTANYAAN & JAWABAN TRANSPARAN) -->
+<section class="flex flex-col space-y-3" id="faq">
+<div class="space-y-1">
+<span class="text-[11px] font-bold uppercase tracking-wider text-[#0F5132]">Tanya Jawab</span>
+<h2 class="text-xl font-bold text-[#0F172A]">Pertanyaan yang Sering Diajukan</h2>
+<p class="text-xs text-slate-500">Informasi transparan mengenai platform CuanDollar.</p>
+</div>
+<div class="space-y-2">
+<!-- FAQ 1 -->
+<div class="faq-item bg-white rounded-xl border border-slate-200/90 shadow-xs overflow-hidden">
+<button class="faq-toggle flex items-center justify-between w-full p-3.5 text-left text-xs font-bold text-[#0F172A]" type="button">
+<span>Apa itu CuanDollar?</span>
+<span class="material-symbols-outlined text-[#0F5132] text-[20px] transition-transform">expand_more</span>
+</button>
+<div class="faq-content hidden px-3.5 pb-3.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5">
+              CuanDollar adalah platform panduan dan perangkat produktivitas yang mengurasi lowongan kerja remote internasional, menyediakan template dokumen lamaran, kalkulator estimasi tarif freelance, dan pelacak alur aplikasi kerja.
+            </div>
+</div>
+<!-- FAQ 2 -->
+<div class="faq-item bg-white rounded-xl border border-slate-200/90 shadow-xs overflow-hidden">
+<button class="faq-toggle flex items-center justify-between w-full p-3.5 text-left text-xs font-bold text-[#0F172A]" type="button">
+<span>Apakah CuanDollar cocok untuk pemula?</span>
+<span class="material-symbols-outlined text-[#0F5132] text-[20px] transition-transform">expand_more</span>
+</button>
+<div class="faq-content hidden px-3.5 pb-3.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5">
+              Ya, materi disusun dalam bahasa Indonesia yang terstruktur dengan instruksi jelas langkah demi langkah agar siapa saja yang belum pernah bekerja secara remote dapat memahami persiapannya dengan mudah.
+            </div>
+</div>
+<!-- FAQ 3 -->
+<div class="faq-item bg-white rounded-xl border border-slate-200/90 shadow-xs overflow-hidden">
+<button class="faq-toggle flex items-center justify-between w-full p-3.5 text-left text-xs font-bold text-[#0F172A]" type="button">
+<span>Apakah saya harus memiliki pengalaman freelance?</span>
+<span class="material-symbols-outlined text-[#0F5132] text-[20px] transition-transform">expand_more</span>
+</button>
+<div class="faq-content hidden px-3.5 pb-3.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5">
+              Tidak wajib. Di dalam direktori dan modul persiapan, tersedia panduan untuk menyusun portofolio awal serta memilih jenis peluang entry-level yang ramah bagi pemula.
+            </div>
+</div>
+<!-- FAQ 4 -->
+<div class="faq-item bg-white rounded-xl border border-slate-200/90 shadow-xs overflow-hidden">
+<button class="faq-toggle flex items-center justify-between w-full p-3.5 text-left text-xs font-bold text-[#0F172A]" type="button">
+<span>Bagaimana cara membeli akses?</span>
+<span class="material-symbols-outlined text-[#0F5132] text-[20px] transition-transform">expand_more</span>
+</button>
+<div class="faq-content hidden px-3.5 pb-3.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5">
+              Klik tombol 'Beli Akses — Rp99.000', masukkan detail kontak Anda pada halaman checkout aman, dan selesaikan pembayaran via transfer bank atau metode instan QRIS/e-wallet yang tersedia.
+            </div>
+</div>
+<!-- FAQ 5 -->
+<div class="faq-item bg-white rounded-xl border border-slate-200/90 shadow-xs overflow-hidden">
+<button class="faq-toggle flex items-center justify-between w-full p-3.5 text-left text-xs font-bold text-[#0F172A]" type="button">
+<span>Bagaimana cara mengaktifkan akses premium?</span>
+<span class="material-symbols-outlined text-[#0F5132] text-[20px] transition-transform">expand_more</span>
+</button>
+<div class="faq-content hidden px-3.5 pb-3.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5">
+              Setelah pembayaran terkonfirmasi secara otomatis, tautan aktivasi dan kredensial akses ke seluruh template dan dashboard akan langsung dikirimkan ke email serta WhatsApp Anda.
+            </div>
+</div>
+<!-- FAQ 6 -->
+<div class="faq-item bg-white rounded-xl border border-slate-200/90 shadow-xs overflow-hidden">
+<button class="faq-toggle flex items-center justify-between w-full p-3.5 text-left text-xs font-bold text-[#0F172A]" type="button">
+<span>Apakah CuanDollar menjamin saya mendapatkan pekerjaan?</span>
+<span class="material-symbols-outlined text-[#0F5132] text-[20px] transition-transform">expand_more</span>
+</button>
+<div class="faq-content hidden px-3.5 pb-3.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5">
+              Tidak. CuanDollar menegaskan bahwa kami tidak menjamin diterimanya kerja atau penghasilan tertentu. CuanDollar murni platform edukasi dan pendukung persiapan agar proses melamar Anda lebih terarah, kompetitif, dan profesional.
+            </div>
+</div>
+<!-- FAQ 7 -->
+<div class="faq-item bg-white rounded-xl border border-slate-200/90 shadow-xs overflow-hidden">
+<button class="faq-toggle flex items-center justify-between w-full p-3.5 text-left text-xs font-bold text-[#0F172A]" type="button">
+<span>Apakah pembayaran hanya dilakukan sekali?</span>
+<span class="material-symbols-outlined text-[#0F5132] text-[20px] transition-transform">expand_more</span>
+</button>
+<div class="faq-content hidden px-3.5 pb-3.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5">
+              Ya, pembayaran Rp99.000 dilakukan hanya satu kali untuk akses selamanya, tanpa kewajiban biaya langganan bulanan atau biaya tersembunyi lainnya.
+            </div>
+</div>
+</div>
+</section>
+<!-- 8. FOOTER -->
+<footer class="bg-white -mx-gutter px-gutter py-6 space-y-5 border-t border-slate-200/80 text-slate-600">
+<!-- Logo Lengkap -->
+<div class="space-y-2">
+<img alt="CuanDollar Full Logo" class="h-10 w-auto max-w-[200px] object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vrb0QwUnQxJQNTgz4MA0AiApy-vsq-fiYQhyIgo2QrJMjGHxSvhy0Za2oJEld1R6Z4whRV_pw1VAyHCeCWu29_MTZxm0LnYoUhcv4X0WKWH6355ESqpie0moLgFQ8LMhI2Z07rB292E6DqL3kcLXyn-tygZL9qG79VhbCdtICebphcFy_OdGtJIh-1WOXV3DTuCHKoGKB6cpvGEFhQFk2iXzvfm4rpQZBZI8K9Rzc3TntHZaJDH_cEKg"/>
+<p class="text-xs text-slate-600 leading-relaxed">
+            Platform pendukung persiapan dan kurasi peluang kerja remote &amp; freelance internasional untuk talenta Indonesia.
+          </p>
+</div>
+<!-- Navigasi & Kontak -->
+<div class="grid grid-cols-2 gap-4 text-xs">
+<div class="space-y-1.5">
+<span class="font-bold text-[#0F172A] block">Fitur Utama</span>
+<ul class="space-y-1 text-slate-600">
+<li><a class="hover:text-[#0F5132]" href="#fitur">Cari Kerja</a></li>
+<li><a class="hover:text-[#0F5132]" href="#fitur">Siapkan Lamaran</a></li>
+<li><a class="hover:text-[#0F5132]" href="#fitur">Hitung Cuan</a></li>
+<li><a class="hover:text-[#0F5132]" href="#fitur">Lamaran Saya</a></li>
+</ul>
+</div>
+<div class="space-y-1.5">
+<span class="font-bold text-[#0F172A] block">Kontak Resmi</span>
+<ul class="space-y-1 text-slate-600">
+<li class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">mail</span>
+<span class="truncate">support@cuandollar.id</span>
+</li>
+<li class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">chat</span>
+<span>WhatsApp Bantuan</span>
+</li>
+<li class="text-[11px] text-slate-400">09:00 - 17:00 WIB</li>
+</ul>
+</div>
+</div>
+<!-- Legal Links -->
+<div class="flex items-center gap-4 text-xs font-medium text-slate-600 border-t border-slate-100 pt-3">
+<a class="hover:text-[#0F5132] underline" href="#">Kebijakan Privasi</a>
+<a class="hover:text-[#0F5132] underline" href="#">Ketentuan Layanan</a>
+</div>
+<!-- Disclaimer Etis -->
+<div class="space-y-2 border-t border-slate-100 pt-3 text-[11px] text-slate-500 leading-relaxed">
+<p>
+<strong>Disclaimer Etis:</strong> CuanDollar merupakan platform pendukung pencarian peluang dan persiapan lamaran, bukan jaminan memperoleh pekerjaan atau penghasilan. Keberhasilan sepenuhnya bergantung pada profil, keterampilan, dan keputusan perekrut.
+          </p>
+<div class="text-slate-400">
+            © 2025 CuanDollar. Hak Cipta Dilindungi.
+          </div>
+</div>
+</footer>
+</div>
+</main>
+<!-- BOTTOM NAVIGATION (MOBILE SHELL) -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-white/95 backdrop-blur-xl border-t border-slate-200/80 shadow-[0_-4px_16px_rgba(15,23,42,0.04)]" data-active-classes="text-[#0F5132] font-semibold">
+<div class="flex items-center justify-around h-16 px-space-xs">
+<a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] py-1 px-2 text-[#0F5132] font-semibold" data-path="beranda" href="#">
+<span class="material-symbols-outlined text-[22px]">home</span>
+<span class="text-[11px] mt-0.5">Beranda</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] py-1 px-2 text-slate-500 hover:text-[#0F172A] transition-colors" data-path="fitur" href="#fitur">
+<span class="material-symbols-outlined text-[22px]">widgets</span>
+<span class="text-[11px] mt-0.5">Fitur</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] py-1 px-2 text-slate-500 hover:text-[#0F172A] transition-colors" data-path="harga" href="#harga">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+<span class="text-[11px] mt-0.5">Harga</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] py-1 px-2 text-slate-500 hover:text-[#0F172A] transition-colors" data-path="faq" href="#faq">
+<span class="material-symbols-outlined text-[22px]">help_outline</span>
+<span class="text-[11px] mt-0.5">FAQ</span>
+</a>
+<a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] py-1 px-2 text-slate-500 hover:text-[#0F172A] transition-colors" data-path="profil" href="#">
+<span class="material-symbols-outlined text-[22px]">account_circle</span>
+<span class="text-[11px] mt-0.5">Profil</span>
+</a>
+</div>
+</nav>
+<!-- CLIENT-SIDE SCRIPT: CALCULATOR & FAQ -->
+<script>
+    (function() {
+      // 1. Interactive Rate Calculator
+      const rateInput = document.getElementById('calc-rate');
+      const hoursInput = document.getElementById('calc-hours');
+      const feeInput = document.getElementById('calc-fee');
+      const fxInput = document.getElementById('calc-fx');
+
+      const resGross = document.getElementById('res-gross');
+      const resFee = document.getElementById('res-fee');
+      const resNet = document.getElementById('res-net');
+
+      function updateCalculator() {
+        if (!rateInput || !hoursInput || !feeInput || !fxInput) return;
+        const rate = parseFloat(rateInput.value) || 0;
+        const hours = parseFloat(hoursInput.value) || 0;
+        const feePercent = parseFloat(feeInput.value) || 0;
+        const fx = parseFloat(fxInput.value) || 16000;
+
+        const grossUsd = rate * hours;
+        const feeUsd = grossUsd * (feePercent / 100);
+        const netUsd = grossUsd - feeUsd;
+        const netIdr = netUsd * fx;
+
+        if (resGross) resGross.textContent = '$' + grossUsd.toLocaleString('en-US');
+        if (resFee) resFee.textContent = '-$' + feeUsd.toLocaleString('en-US', { maximumFractionDigits: 1 });
+        if (resNet) resNet.textContent = 'Rp ' + Math.round(netIdr).toLocaleString('id-ID');
+      }
+
+      [rateInput, hoursInput, feeInput, fxInput].forEach(function(el) {
+        if (el) {
+          el.addEventListener('input', updateCalculator);
+        }
+      });
+      updateCalculator();
+
+      // 2. FAQ Accordion
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(function(item) {
+        const toggle = item.querySelector('.faq-toggle');
+        const content = item.querySelector('.faq-content');
+        const icon = toggle ? toggle.querySelector('.material-symbols-outlined') : null;
+
+        if (toggle && content) {
+          toggle.addEventListener('click', function() {
+            const isHidden = content.classList.contains('hidden');
+            // Close all
+            faqItems.forEach(function(other) {
+              const otherContent = other.querySelector('.faq-content');
+              const otherIcon = other.querySelector('.material-symbols-outlined');
+              if (otherContent) otherContent.classList.add('hidden');
+              if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+            });
+            if (isHidden) {
+              content.classList.remove('hidden');
+              if (icon) icon.style.transform = 'rotate(180deg)';
+            }
+          });
+        }
+      });
+    })();
+  </script>
+</body></html>
